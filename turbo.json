@@ -14,6 +14,21 @@
       "cache": false,
       "dependsOn": ["build"],
       "persistent": true
+    },
+    "//#format:check": {},
+    "//#format:fix": {
+      "cache": false,
+      "dependsOn": ["//#lint:fix"]
+    },
+    "//#lint:check": {},
+    "//#lint:fix": {
+      "cache": false
+    },
+    "//#quality:check": {
+      "dependsOn": ["//#lint:check", "//#format:check"]
+    },
+    "//#quality:fix": {
+      "dependsOn": ["//#lint:fix", "//#format:fix"]
     }
   },
   "ui": "tui"

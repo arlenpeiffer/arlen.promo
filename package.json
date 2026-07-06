@@ -3,10 +3,18 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "check": "turbo run //#quality:check",
     "dev": "turbo run dev",
+    "fix": "turbo run //#quality:fix",
+    "format:check": "oxfmt --check",
+    "format:fix": "oxfmt",
+    "lint:check": "oxlint",
+    "lint:fix": "oxlint --fix",
     "start": "turbo run start"
   },
   "devDependencies": {
+    "oxfmt": "^0.57.0",
+    "oxlint": "^1.72.0",
     "turbo": "^2.10.3"
   },
   "devEngines": {
