@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@studio/types": ["../studio/sanity.types.ts"]
     }
   },
   "include": [
