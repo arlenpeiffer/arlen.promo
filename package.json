@@ -13,9 +13,17 @@
     "start": "turbo run start"
   },
   "devDependencies": {
+    "lint-staged": "^16.4.0",
     "oxfmt": "^0.57.0",
     "oxlint": "^1.72.0",
     "turbo": "^2.10.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": [
+      "pnpm lint:fix",
+      "pnpm format:fix"
+    ],
+    "!(*.{js,jsx,ts,tsx,mjs,cjs})": "pnpm format:fix --no-error-on-unmatched-pattern"
   },
   "devEngines": {
     "packageManager": {
