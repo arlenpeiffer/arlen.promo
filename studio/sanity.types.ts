@@ -15,6 +15,348 @@
 export declare const internalGroqTypeReferenceTo: unique symbol
 
 // Source: schema.json
+export type Content = {
+  variant?: 'figure' | 'copyBlock'
+  figure?: Figure
+  copyBlock?: CopyBlock
+}
+
+export type Placement = {
+  base?: Column
+  medium?: Column
+  large?: Column
+}
+
+export type SectionContent = {
+  variant?: 'grid' | 'figure'
+  figure?: Figure
+  grid?: Grid
+}
+
+export type Spacing = {
+  above?: 'none'
+  below?: 'none'
+}
+
+export type Video = {
+  _type: 'video'
+  source?: MuxVideo
+  description?: string
+}
+
+export type SanityImageAssetReference = {
+  _ref: string
+  _type: 'reference'
+  _weak?: boolean
+  [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+}
+
+export type Seo = {
+  _type: 'seo'
+  title?: string
+  description?: string
+  image?: {
+    asset?: SanityImageAssetReference
+    media?: unknown
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  }
+}
+
+export type Section = {
+  _type: 'section'
+  name?: string
+  content?: SectionContent
+  spacing?: Spacing
+}
+
+export type Media = {
+  _type: 'media'
+  variant?: 'image' | 'video'
+  image?: {
+    asset?: SanityImageAssetReference
+    media?: unknown
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  }
+  video?: Video
+}
+
+export type Link = {
+  _type: 'link'
+  label?: string
+  url?: string
+}
+
+export type Grid = {
+  _type: 'grid'
+  cells?: Array<
+    {
+      _key: string
+    } & Cell
+  >
+  caption?: string
+}
+
+export type Figure = {
+  _type: 'figure'
+  media?: Media
+  caption?: string
+}
+
+export type CopyBlock = {
+  _type: 'copyBlock'
+  heading?: string
+  body?: Array<{
+    children?: Array<{
+      marks?: Array<string>
+      text?: string
+      _type: 'span'
+      _key: string
+    }>
+    style?: 'normal'
+    listItem?: never
+    markDefs?: Array<
+      {
+        _key: string
+      } & Link
+    >
+    level?: number
+    _type: 'block'
+    _key: string
+  }>
+}
+
+export type Column = {
+  _type: 'column'
+  start?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+  span?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+}
+
+export type Cell = {
+  _type: 'cell'
+  content?: Content
+  placement?: Placement
+}
+
+export type HomePage = {
+  _id: string
+  _type: 'homePage'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  caseStudies?: Array<{
+    name?: string
+    slug?: Slug
+    tagline?: string
+    hero?: Media
+    roles?: string
+    tools?: string
+    timeline?: string
+    links?: Array<
+      {
+        _key: string
+      } & Link
+    >
+    sections?: Array<
+      {
+        _key: string
+      } & Section
+    >
+    seo?: Seo
+    _type: 'caseStudy'
+    _key: string
+  }>
+  seo?: Seo
+}
+
+export type ContactPage = {
+  _id: string
+  _type: 'contactPage'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  seo?: Seo
+}
+
+export type CaseStudy = {
+  _id: string
+  _type: 'caseStudy'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  name?: string
+  slug?: Slug
+  tagline?: string
+  hero?: Media
+  roles?: string
+  tools?: string
+  timeline?: string
+  links?: Array<
+    {
+      _key: string
+    } & Link
+  >
+  sections?: Array<
+    {
+      _key: string
+    } & Section
+  >
+  seo?: Seo
+}
+
+export type MuxVideoAssetReference = {
+  _ref: string
+  _type: 'reference'
+  _weak?: boolean
+  [internalGroqTypeReferenceTo]?: 'mux.videoAsset'
+}
+
+export type MuxVideo = {
+  _type: 'mux.video'
+  asset?: MuxVideoAssetReference
+}
+
+export type SanityImageCrop = {
+  _type: 'sanity.imageCrop'
+  top?: number
+  bottom?: number
+  left?: number
+  right?: number
+}
+
+export type SanityImageHotspot = {
+  _type: 'sanity.imageHotspot'
+  x?: number
+  y?: number
+  height?: number
+  width?: number
+}
+
+export type Slug = {
+  _type: 'slug'
+  current?: string
+  source?: string
+}
+
+export type AboutPage = {
+  _id: string
+  _type: 'aboutPage'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  seo?: Seo
+}
+
+export type MuxVideoAsset = {
+  _id: string
+  _type: 'mux.videoAsset'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  status?: string
+  assetId?: string
+  playbackId?: string
+  filename?: string
+  thumbTime?: number
+  data?: MuxAssetData
+}
+
+export type MuxAssetData = {
+  _type: 'mux.assetData'
+  resolution_tier?: string
+  upload_id?: string
+  created_at?: string
+  id?: string
+  status?: string
+  max_stored_resolution?: string
+  passthrough?: string
+  encoding_tier?: string
+  video_quality?: string
+  master_access?: string
+  aspect_ratio?: string
+  duration?: number
+  max_stored_frame_rate?: number
+  mp4_support?: string
+  max_resolution_tier?: string
+  tracks?: Array<
+    {
+      _key: string
+    } & MuxTrack
+  >
+  playback_ids?: Array<
+    {
+      _key: string
+    } & MuxPlaybackId
+  >
+  static_renditions?: MuxStaticRenditions
+  master?: MuxMasterFile
+}
+
+export type MuxMasterFile = {
+  _type: 'mux.masterFile'
+  status?: string
+  url?: string
+}
+
+export type MuxStaticRenditions = {
+  _type: 'mux.staticRenditions'
+  status?: string
+  files?: Array<
+    {
+      _key: string
+    } & MuxStaticRenditionFile
+  >
+}
+
+export type MuxStaticRenditionFile = {
+  _type: 'mux.staticRenditionFile'
+  name?: string
+  ext?: string
+  height?: number
+  width?: number
+  bitrate?: number
+  filesize?: string
+  type?: string
+  status?: string
+  resolution_tier?: string
+  resolution?: string
+  id?: string
+  passthrough?: string
+}
+
+export type MuxPlaybackId = {
+  _type: 'mux.playbackId'
+  id?: string
+  policy?: string
+}
+
+export type MuxTrack = {
+  _type: 'mux.track'
+  id?: string
+  type?: string
+  max_width?: number
+  max_frame_rate?: number
+  duration?: number
+  max_height?: number
+  language_code?: string
+  name?: string
+  status?: string
+  text_source?: string
+  text_type?: string
+}
+
+export type MediaTag = {
+  _id: string
+  _type: 'media.tag'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  name?: Slug
+}
+
 export type SanityImagePaletteSwatch = {
   _type: 'sanity.imagePaletteSwatch'
   background?: string
@@ -51,22 +393,6 @@ export type SanityImageMetadata = {
   thumbHash?: string
   hasAlpha?: boolean
   isOpaque?: boolean
-}
-
-export type SanityImageHotspot = {
-  _type: 'sanity.imageHotspot'
-  x?: number
-  y?: number
-  height?: number
-  width?: number
-}
-
-export type SanityImageCrop = {
-  _type: 'sanity.imageCrop'
-  top?: number
-  bottom?: number
-  left?: number
-  right?: number
 }
 
 export type SanityFileAsset = {
@@ -128,21 +454,44 @@ export type Geopoint = {
   alt?: number
 }
 
-export type Slug = {
-  _type: 'slug'
-  current?: string
-  source?: string
-}
-
 export type AllSanitySchemaTypes =
+  | Content
+  | Placement
+  | SectionContent
+  | Spacing
+  | Video
+  | SanityImageAssetReference
+  | Seo
+  | Section
+  | Media
+  | Link
+  | Grid
+  | Figure
+  | CopyBlock
+  | Column
+  | Cell
+  | HomePage
+  | ContactPage
+  | CaseStudy
+  | MuxVideoAssetReference
+  | MuxVideo
+  | SanityImageCrop
+  | SanityImageHotspot
+  | Slug
+  | AboutPage
+  | MuxVideoAsset
+  | MuxAssetData
+  | MuxMasterFile
+  | MuxStaticRenditions
+  | MuxStaticRenditionFile
+  | MuxPlaybackId
+  | MuxTrack
+  | MediaTag
   | SanityImagePaletteSwatch
   | SanityImagePalette
   | SanityImageDimensions
   | SanityImageMetadata
-  | SanityImageHotspot
-  | SanityImageCrop
   | SanityFileAsset
   | SanityAssetSourceData
   | SanityImageAsset
   | Geopoint
-  | Slug
