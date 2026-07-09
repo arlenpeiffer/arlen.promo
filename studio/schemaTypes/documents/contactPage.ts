@@ -12,5 +12,12 @@ export const contactPage = defineType({
       type: 'seo'
     })
   ],
-  icon: DocumentTextIcon
+  icon: DocumentTextIcon,
+  preview: {
+    prepare() {
+      return {
+        title: 'Contact Page'
+      }
+    }
+  }
 })

@@ -12,5 +12,12 @@ export const aboutPage = defineType({
       type: 'seo'
     })
   ],
-  icon: DocumentTextIcon
+  icon: DocumentTextIcon,
+  preview: {
+    prepare() {
+      return {
+        title: 'About Page'
+      }
+    }
+  }
 })

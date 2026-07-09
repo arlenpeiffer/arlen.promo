@@ -18,5 +18,12 @@ export const homePage = defineType({
       type: 'seo'
     })
   ],
-  icon: DocumentTextIcon
+  icon: DocumentTextIcon,
+  preview: {
+    prepare() {
+      return {
+        title: 'Home Page'
+      }
+    }
+  }
 })
