@@ -7,11 +7,13 @@
     "deploy-graphql": "sanity graphql deploy",
     "dev": "sanity dev",
     "start": "sanity start",
+    "test": "vitest run",
     "typegen": "sanity schema extract && sanity typegen generate"
   },
   "dependencies": {
     "@portabletext/toolkit": "^5.0.2",
     "@sanity/icons": "^5.0.0",
+    "@sanity/ui": "^3.3.5",
     "@sanity/vision": "^6.4.0",
     "change-case": "^5.4.4",
     "react": "^19.2.4",
@@ -23,6 +25,7 @@
   },
   "devDependencies": {
     "@types/react": "^19.2.14",
-    "typescript": "^5.8"
+    "typescript": "^5.8",
+    "vitest": "^4.1.10"
   }
 }
