@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { getColumnLimit, getColumnOptions, validateCombination } from './helpers'
+import { getColumnLimit, getColumnOptions, validateCombination } from '@/components/column/helpers'
 
 describe('getColumnLimit', () => {
   it('caps the field at 13 - sibling when the sibling is set', () => {

@@ -1,4 +1,4 @@
-import { documents } from '../schemaTypes/documents'
+import { documents } from '@/schemaTypes/documents'
 
 export type DocumentTypeName = (typeof documents)[number]['name']
 

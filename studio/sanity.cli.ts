@@ -1,3 +1,5 @@
+import path from 'path'
+
 import { defineCliConfig } from 'sanity/cli'
 
 export default defineCliConfig({
@@ -14,5 +16,12 @@ export default defineCliConfig({
   },
   typegen: {
     path: '../frontend/src/**/*.{ts,tsx}'
+  },
+  vite: {
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, '.')
+      }
+    }
   }
 })

@@ -2,7 +2,7 @@ import { Select } from '@sanity/ui'
 import { type ChangeEvent, useCallback } from 'react'
 import { type NumberInputProps, set, unset, useFormValue } from 'sanity'
 
-import { getColumnOptions } from './helpers'
+import { getColumnOptions } from '@/components/column/helpers'
 
 export function ColumnSelect({ elementProps, onChange, path, value }: NumberInputProps) {
   const field = path[path.length - 1]

@@ -1,8 +1,8 @@
 import { InlineIcon } from '@sanity/icons/Inline'
 import { defineField, defineType } from 'sanity'
 
-import { ColumnSelect } from '../../components/column/ColumnSelect'
-import { validateCombination } from '../../components/column/helpers'
+import { ColumnSelect } from '@/components/column/ColumnSelect'
+import { validateCombination } from '@/components/column/helpers'
 
 export const column = defineType({
   name: 'column',

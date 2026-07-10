@@ -4,9 +4,9 @@ import { media, mediaAssetSource } from 'sanity-plugin-media'
 import { muxInput } from 'sanity-plugin-mux-input'
 import { structureTool } from 'sanity/structure'
 
-import { LOCKED_DOCUMENT_IDS, type DocumentTypeName } from './lib/constants'
-import { schemaTypes } from './schemaTypes'
-import { structure } from './structure'
+import { LOCKED_DOCUMENT_IDS, type DocumentTypeName } from '@/lib/constants'
+import { schemaTypes } from '@/schemaTypes'
+import { structure } from '@/structure'
 
 export default defineConfig({
   title: 'arlen.promo',
