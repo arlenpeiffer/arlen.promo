@@ -10,7 +10,8 @@
     "format:fix": "oxfmt",
     "lint:check": "oxlint",
     "lint:fix": "oxlint --fix",
-    "start": "turbo run start"
+    "start": "turbo run start",
+    "test": "turbo run test"
   },
   "devDependencies": {
     "lint-staged": "^16.4.0",

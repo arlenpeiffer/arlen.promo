@@ -15,6 +15,7 @@
       "dependsOn": ["build"],
       "persistent": true
     },
+    "test": {},
     "//#format:check": {},
     "//#format:fix": {
       "cache": false,
