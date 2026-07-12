@@ -8,7 +8,8 @@
     "dev": "sanity dev",
     "start": "sanity start",
     "test": "vitest run",
-    "typegen": "sanity schema extract && sanity typegen generate"
+    "typegen": "sanity schema extract && sanity typegen generate",
+    "typegen:watch": "sanity schema extract && sanity typegen generate --watch"
   },
   "dependencies": {
     "@portabletext/toolkit": "^5.0.2",

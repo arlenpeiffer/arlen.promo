@@ -14,8 +14,13 @@ export default defineCliConfig({
      */
     autoUpdates: true
   },
+  schemaExtraction: {
+    enabled: true
+  },
   typegen: {
-    path: '../frontend/src/**/*.{ts,tsx}'
+    path: '../frontend/src/lib/sanity/queries.ts',
+    generates: '../frontend/src/lib/sanity/types.ts',
+    overloadClientMethods: false
   },
   vite: {
     resolve: {

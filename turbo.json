@@ -16,6 +16,10 @@
       "persistent": true
     },
     "test": {},
+    "typegen:watch": {
+      "cache": false,
+      "persistent": true
+    },
     "//#format:check": {},
     "//#format:fix": {
       "cache": false,

@@ -131,8 +131,8 @@ export type CopyBlock = {
 
 export type Column = {
   _type: 'column'
-  start?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
-  span?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+  start?: number
+  span?: number
 }
 
 export type Cell = {
@@ -495,3 +495,34 @@ export type AllSanitySchemaTypes =
   | SanityAssetSourceData
   | SanityImageAsset
   | Geopoint
+
+// Source: ../frontend/src/lib/sanity/queries.ts
+// Variable: CASE_STUDY_QUERY
+// Query: *[_type == "caseStudy" && slug.current == $slug][0]{    hero {        ...select(    variant == "image" => {      "image": image.asset-> {        altText,        "height": metadata.dimensions.height,        url,        "width": metadata.dimensions.width,      }    },    variant == "video" => {      video {        description,        source      }    }  )    },    links[] {        label,  url    },    name,    roles,    tagline,    timeline,    tools  }
+export type CASE_STUDY_QUERY_RESULT = {
+  hero:
+    | {
+        image: {
+          altText: string | null
+          height: number | null
+          url: string | null
+          width: number | null
+        } | null
+      }
+    | {
+        video: {
+          description: string | null
+          source: MuxVideo | null
+        } | null
+      }
+    | null
+  links: Array<{
+    label: string | null
+    url: string | null
+  }> | null
+  name: string | null
+  roles: string | null
+  tagline: string | null
+  timeline: string | null
+  tools: string | null
+} | null
