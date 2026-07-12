@@ -141,34 +141,24 @@ export type Cell = {
   placement?: Placement
 }
 
+export type CaseStudyReference = {
+  _ref: string
+  _type: 'reference'
+  _weak?: boolean
+  [internalGroqTypeReferenceTo]?: 'caseStudy'
+}
+
 export type HomePage = {
   _id: string
   _type: 'homePage'
   _createdAt: string
   _updatedAt: string
   _rev: string
-  caseStudies?: Array<{
-    name?: string
-    slug?: Slug
-    tagline?: string
-    hero?: Media
-    roles?: string
-    tools?: string
-    timeline?: string
-    links?: Array<
-      {
-        _key: string
-      } & Link
-    >
-    sections?: Array<
-      {
-        _key: string
-      } & Section
-    >
-    seo?: Seo
-    _type: 'caseStudy'
-    _key: string
-  }>
+  caseStudies?: Array<
+    {
+      _key: string
+    } & CaseStudyReference
+  >
   seo?: Seo
 }
 
@@ -470,6 +460,7 @@ export type AllSanitySchemaTypes =
   | CopyBlock
   | Column
   | Cell
+  | CaseStudyReference
   | HomePage
   | ContactPage
   | CaseStudy

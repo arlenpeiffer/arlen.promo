@@ -10,7 +10,7 @@ export const homePage = defineType({
       name: 'caseStudies',
       title: 'Case Studies',
       type: 'array',
-      of: [defineArrayMember({ type: 'caseStudy' })]
+      of: [defineArrayMember({ type: 'reference', to: [{ type: 'caseStudy' }] })]
     }),
     defineField({
       name: 'seo',
