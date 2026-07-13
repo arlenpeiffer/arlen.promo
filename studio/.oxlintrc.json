@@ -142,6 +142,7 @@
     "no-useless-escape": "warn",
     "no-with": "error",
     "require-yield": "warn",
+    "sort-imports": ["error", { "ignoreCase": true, "ignoreDeclarationSort": true }],
     "use-isnan": "warn",
     "valid-typeof": [
       "warn",

@@ -12,6 +12,7 @@
     "no-array-constructor": "error",
     "no-unused-expressions": "warn",
     "no-unused-vars": "warn",
+    "sort-imports": ["error", { "ignoreCase": true, "ignoreDeclarationSort": true }],
     "nextjs/google-font-display": "warn",
     "nextjs/google-font-preconnect": "warn",
     "nextjs/next-script-for-ga": "warn",
