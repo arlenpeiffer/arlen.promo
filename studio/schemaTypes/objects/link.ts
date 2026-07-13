@@ -9,7 +9,8 @@ export const link = defineType({
     defineField({
       name: 'label',
       title: 'Label',
-      type: 'string'
+      type: 'string',
+      validation: (rule) => rule.required()
     }),
     defineField({
       name: 'url',
@@ -23,7 +24,7 @@ export const link = defineType({
     select: { label: 'label', url: 'url' },
     prepare({ label, url }) {
       return {
-        title: label || 'Link',
+        title: label,
         subtitle: url
       }
     }
