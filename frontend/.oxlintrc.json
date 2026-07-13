@@ -34,6 +34,7 @@
     "nextjs/no-head-import-in-document": "error",
     "nextjs/no-script-component-in-head": "error",
     "typescript/ban-ts-comment": "error",
+    "typescript/consistent-type-imports": ["error", { "fixStyle": "inline-type-imports" }],
     "typescript/no-duplicate-enum-values": "error",
     "typescript/no-empty-object-type": "error",
     "typescript/no-explicit-any": "error",

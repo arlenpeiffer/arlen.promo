@@ -1,5 +1,5 @@
 import { DocumentTextIcon } from '@sanity/icons/DocumentText'
-import type { StructureResolver, StructureBuilder } from 'sanity/structure'
+import { type StructureResolver, type StructureBuilder } from 'sanity/structure'
 
 export const structure: StructureResolver = (S: StructureBuilder) =>
   S.list()

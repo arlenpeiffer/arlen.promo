@@ -187,7 +187,7 @@
   },
   "overrides": [
     {
-      "files": ["**/*.ts?(x)"],
+      "files": ["**/*.ts", "**/*.tsx"],
       "rules": {
         "no-dupe-class-members": "off",
         "typescript/no-dupe-class-members": "error",
@@ -222,6 +222,7 @@
             "allowTaggedTemplates": true
           }
         ],
+        "typescript/consistent-type-imports": ["error", { "fixStyle": "inline-type-imports" }],
         "typescript/no-empty-object-type": "warn",
         "typescript/no-extra-non-null-assertion": "warn",
         "typescript/no-misused-new": "warn"
