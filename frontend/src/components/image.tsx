@@ -2,10 +2,10 @@ import { Image as NextSanityImage } from 'next-sanity/image'
 import { type ComponentProps } from 'react'
 
 export type ImageType = {
-  altText: string | null
-  height: number | null
-  url: string | null
-  width: number | null
+  altText: Nullable<string>
+  height: Nullable<number>
+  url: Nullable<string>
+  width: Nullable<number>
 }
 
 export type ImageProps = Omit<

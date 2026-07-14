@@ -5,8 +5,8 @@ import { Figure } from '@/components/figure'
 import { cn } from '@/lib/utils'
 
 export type GridType = {
-  caption: string | null
-  cells: CellType[] | null
+  caption: Nullable<string>
+  cells: Nullable<CellType[]>
 }
 
 type GridProps = ComponentProps<'div'> & {

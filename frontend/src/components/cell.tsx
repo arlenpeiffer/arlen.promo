@@ -4,12 +4,12 @@ import { Media } from '@/components/media'
 import { type Placement } from '@/lib/sanity/types'
 import { cn } from '@/lib/utils'
 
-type CellContentCopyBlock = { variant: 'copyBlock'; copyBlock: CopyBlockType | null }
-type CellContentFigure = { variant: 'figure'; figure: FigureType | null }
+type CellContentCopyBlock = { variant: 'copyBlock'; copyBlock: Nullable<CopyBlockType> }
+type CellContentFigure = { variant: 'figure'; figure: Nullable<FigureType> }
 
 export type CellType = {
-  content: CellContentCopyBlock | CellContentFigure | null
-  placement: Placement | null
+  content: Nullable<CellContentCopyBlock | CellContentFigure>
+  placement: Nullable<Placement>
 }
 
 type CellProps = {

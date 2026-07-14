@@ -1,8 +1,8 @@
 import { Image, type ImageProps, type ImageType } from '@/components/image'
 import { Video, type VideoType } from '@/components/video'
 
-type MediaImage = { variant: 'image'; image: ImageType | null }
-type MediaVideo = { variant: 'video'; video: VideoType | null }
+type MediaImage = { variant: 'image'; image: Nullable<ImageType> }
+type MediaVideo = { variant: 'video'; video: Nullable<VideoType> }
 
 export type MediaType = MediaImage | MediaVideo
 

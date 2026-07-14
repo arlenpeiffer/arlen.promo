@@ -6,8 +6,8 @@ import { type ComponentProps } from 'react'
 import { type MuxVideo } from '@/lib/sanity/types'
 
 export type VideoType = {
-  description: string | null
-  source: MuxVideo | null
+  description: Nullable<string>
+  source: Nullable<MuxVideo>
 }
 
 type VideoProps = ComponentProps<typeof MuxPlayer> & {

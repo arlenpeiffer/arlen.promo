@@ -2,7 +2,7 @@ import NextLink from 'next/link'
 import { type ComponentProps } from 'react'
 
 type LinkProps = Omit<ComponentProps<typeof NextLink>, 'href'> & {
-  url?: string | null
+  url?: Nullable<string>
 }
 
 export function Link({ children, className, url, ...props }: LinkProps) {

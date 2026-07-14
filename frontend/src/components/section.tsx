@@ -5,12 +5,12 @@ import { Grid, type GridType } from '@/components/grid'
 import { Media } from '@/components/media'
 import { type Spacing } from '@/lib/sanity/types'
 
-type SectionContentFigure = { variant: 'figure'; figure: FigureType | null }
-type SectionContentGrid = { variant: 'grid'; grid: GridType | null }
+type SectionContentFigure = { variant: 'figure'; figure: Nullable<FigureType> }
+type SectionContentGrid = { variant: 'grid'; grid: Nullable<GridType> }
 
 export type SectionType = {
-  content: SectionContentFigure | SectionContentGrid | null
-  spacing: Spacing | null
+  content: Nullable<SectionContentFigure | SectionContentGrid>
+  spacing: Nullable<Spacing>
 }
 
 type SectionProps = ComponentProps<'div'> & {

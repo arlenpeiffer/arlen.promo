@@ -3,12 +3,12 @@ import { type ComponentProps } from 'react'
 import { type MediaType } from '@/components/media'
 
 export type FigureType = {
-  caption: string | null
-  media: MediaType | null
+  caption: Nullable<string>
+  media: Nullable<MediaType>
 }
 
 type FigureProps = ComponentProps<'figure'> & {
-  caption?: string | null
+  caption?: Nullable<string>
 }
 
 export function Figure({ caption, children, ...props }: FigureProps) {

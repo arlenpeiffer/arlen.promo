@@ -5,8 +5,8 @@ import { Link } from '@/components/link'
 import { type CopyBlock } from '@/lib/sanity/types'
 
 export type CopyBlockType = {
-  body: CopyBlock['body'] | null
-  heading: string | null
+  body: Nullable<CopyBlock['body']>
+  heading: Nullable<string>
 }
 
 type CopyBlockProps = ComponentProps<'div'> & {
