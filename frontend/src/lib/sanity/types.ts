@@ -489,10 +489,11 @@ export type AllSanitySchemaTypes =
 
 // Source: ../frontend/src/lib/sanity/queries.ts
 // Variable: CASE_STUDY_QUERY
-// Query: *[_type == "caseStudy" && slug.current == $slug][0]{    hero {        ...select(    variant == "image" => {      "image": image.asset-> {        altText,        "height": metadata.dimensions.height,        url,        "width": metadata.dimensions.width,      }    },    variant == "video" => {      video {        description,        source      }    }  )    },    links[] {        label,  url    },    name,    roles,    tagline,    timeline,    tools  }
+// Query: *[_type == "caseStudy" && slug.current == $slug][0]{    hero {        ...select(    variant == "image" => {      "variant": "image",      "image": image.asset-> {        altText,        "height": metadata.dimensions.height,        url,        "width": metadata.dimensions.width,      }    },    variant == "video" => {      "variant": "video",      video {        description,        source      }    }  )    },    links[] {      label,      url    },    name,    roles,    sections[] {      content {        ...select(          variant == "figure" => {            "variant": "figure",            figure {                caption,  media {      ...select(    variant == "image" => {      "variant": "image",      "image": image.asset-> {        altText,        "height": metadata.dimensions.height,        url,        "width": metadata.dimensions.width,      }    },    variant == "video" => {      "variant": "video",      video {        description,        source      }    }  )  }            }          },          variant == "grid" => {            "variant": "grid",            grid {              caption,              cells[] {                content {                  ...select(                    variant == "copyBlock" => {                      "variant": "copyBlock",                      copyBlock {                        body,                        heading                      },                    },                    variant == "figure" => {                      "variant": "figure",                      figure {                          caption,  media {      ...select(    variant == "image" => {      "variant": "image",      "image": image.asset-> {        altText,        "height": metadata.dimensions.height,        url,        "width": metadata.dimensions.width,      }    },    variant == "video" => {      "variant": "video",      video {        description,        source      }    }  )  }                      },                    }                  )                },                placement              }            }          }        )      },      spacing    },    tagline,    timeline,    tools  }
 export type CASE_STUDY_QUERY_RESULT = {
   hero:
     | {
+        variant: 'image'
         image: {
           altText: string | null
           height: number | null
@@ -501,6 +502,7 @@ export type CASE_STUDY_QUERY_RESULT = {
         } | null
       }
     | {
+        variant: 'video'
         video: {
           description: string | null
           source: MuxVideo | null
@@ -513,6 +515,94 @@ export type CASE_STUDY_QUERY_RESULT = {
   }> | null
   name: string | null
   roles: string | null
+  sections: Array<{
+    content:
+      | {
+          variant: 'figure'
+          figure: {
+            caption: string | null
+            media:
+              | {
+                  variant: 'image'
+                  image: {
+                    altText: string | null
+                    height: number | null
+                    url: string | null
+                    width: number | null
+                  } | null
+                }
+              | {
+                  variant: 'video'
+                  video: {
+                    description: string | null
+                    source: MuxVideo | null
+                  } | null
+                }
+              | null
+          } | null
+        }
+      | {
+          variant: 'grid'
+          grid: {
+            caption: string | null
+            cells: Array<{
+              content:
+                | {
+                    variant: 'copyBlock'
+                    copyBlock: {
+                      body: Array<{
+                        children?: Array<{
+                          marks?: Array<string>
+                          text?: string
+                          _type: 'span'
+                          _key: string
+                        }>
+                        style?: 'normal'
+                        listItem?: never
+                        markDefs?: Array<
+                          {
+                            _key: string
+                          } & Link
+                        >
+                        level?: number
+                        _type: 'block'
+                        _key: string
+                      }> | null
+                      heading: string | null
+                    } | null
+                  }
+                | {
+                    variant: 'figure'
+                    figure: {
+                      caption: string | null
+                      media:
+                        | {
+                            variant: 'image'
+                            image: {
+                              altText: string | null
+                              height: number | null
+                              url: string | null
+                              width: number | null
+                            } | null
+                          }
+                        | {
+                            variant: 'video'
+                            video: {
+                              description: string | null
+                              source: MuxVideo | null
+                            } | null
+                          }
+                        | null
+                    } | null
+                  }
+                | null
+              placement: Placement | null
+            }> | null
+          } | null
+        }
+      | null
+    spacing: Spacing | null
+  }> | null
   tagline: string | null
   timeline: string | null
   tools: string | null

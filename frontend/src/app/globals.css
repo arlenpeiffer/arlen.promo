@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@source inline("{,md:,lg:}col-{start,span}-{1..12}");
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
